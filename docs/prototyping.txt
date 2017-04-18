@@ -1,0 +1,21 @@
+** Overview **
+Meal page
+    Meal
+        List of options
+            Each option has a list of food
+
+
+** Meal component **
+Meal title
+
+** Options selector component ** 
+Current selected option
+Number of options
+action: Next option
+action: Previous option
+
+** Options component **
+
+
+** Side Bar **
+There is a side bar, which allows to select a meal

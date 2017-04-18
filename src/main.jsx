@@ -10,13 +10,14 @@ import {routes} from './routes';
 import {store} from './store';
 import {clockStore} from './clock';
 import {githubStore} from './github';
+import {mealStore} from './meal';
 
 // Styles
 import 'sanitize.css/sanitize.css';
 import './assets/styles/styles.css';
 
 ReactDOM.render(
-    <Provider store={store} clockStore={clockStore} githubStore={githubStore}>
+    <Provider store={store} clockStore={clockStore} githubStore={githubStore} mealStore={mealStore}>
         <Router history={browserHistory}>
             {routes}
         </Router>
