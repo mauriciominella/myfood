@@ -35,12 +35,12 @@ export default class MealPage extends React.Component {
         const { name, mealList } = this.props.mealStore;
 
         return (
-            <div>
-                <div className={ styles.mealPage }>
-                    <h2>{ name }</h2>
-                </div>
-                <div>
+            <div className={ styles.mealPage }>
+                <div className={ styles.sidebar }>
                 { this.renderMealList(mealList) }
+                </div>
+                <div className={ styles.content }>
+                    <h2>{ name }</h2>
                 </div>
             </div>
         );
