@@ -1,16 +1,28 @@
 import {computed, observable, action} from 'mobx';
+import {meal} from './meal.service';
 
-class MealStore {
-    @observable mealList = [
-        { id: 1, name: 'Breakfast', time: '6:00h' },
-        { id: 2, name: 'Morning Lunch', time: '8:00h' },
-        { id: 3, name: 'Mid morning Lunch', time: '10:00h' },
-    ];
+export class MealStore {
+    @observable mealList = [];
+
+    service = null;
 
     @observable selectedMeal;
 
     constructor() {
+        this.setService(meal);
+    }
+
+    initialise() {
+        this.fetchMealList();
         this.setInitialSelectedMeal();
+    }
+
+    setService(service) {
+        this.service = service;
+    }
+
+    fetchMealList() {
+        this.mealList = this.service.getMeals();
     }
 
     setInitialSelectedMeal() {

@@ -15,6 +15,10 @@ export default class MealPage extends React.Component {
         dummy: React.PropTypes.string,
     };
 
+    componentWillMount() {
+        this.props.mealStore.initialise();
+    }
+
     onChangeMeal(meal) {
         this.props.mealStore.changeMeal(meal);
     }
